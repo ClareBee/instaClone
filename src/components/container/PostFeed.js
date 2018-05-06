@@ -4,8 +4,8 @@ import { Post } from '../presentation';
 
 class PostFeed extends Component {
 
-  _renderPost(){
-    return <Post/>;
+  _renderPost({item}){
+    return <Post item={item}/>;
   }
 
   _returnKey(item){
@@ -15,9 +15,9 @@ class PostFeed extends Component {
   render () {
     return (
       <FlatList
-        data={[1,2,3]}
+        data={[1,2,3, 4, 5, 6, 7]}
         keyExtractor={item => this._returnKey(item)}
-        renderItem={() => this._renderPost()}/>
+        renderItem={item => this._renderPost(item)}/>
     );
   }
 }

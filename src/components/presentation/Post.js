@@ -25,6 +25,7 @@ class Post extends Component {
   }
   render () {
     const imageHeight = Math.floor(this.state.screenWidth * 0.95);
+    const imageSelection = (this.props.item % 2 === 0) ? config.images.dogPhoto : config.images.dogPhoto2;
     const heartColor = this.state.liked ? "rgb(233, 20, 70)" : null
     return (
       <View style={{ flex: 1, width: 100 + "%"}}>
@@ -44,7 +45,7 @@ class Post extends Component {
           onPress={() => this.likeToggled()}>
           <Image
             style={{ width: this.state.screenWidth, height: imageHeight }}
-            source={config.images.dogPhoto} />
+            source={imageSelection} />
         </TouchableOpacity>
         <View style={styles.iconBar}>
           <Image style={[styles.icon, {height: 40, width: 40, tintColor: heartColor}]} source={config.images.heartIcon} />

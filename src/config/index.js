@@ -6,6 +6,7 @@ export default {
     arrowIcon: require('../../src/assets/arrow.png'),
     profilePhoto: require('../../src/assets/DSC_4725.jpg'),
     dogPhoto: require('../../src/assets/cutedoggo.jpg'),
+    dogPhoto2: require('../../src/assets/cutedoggo2.jpg')
   },
   styleConstants: {
     row: {
