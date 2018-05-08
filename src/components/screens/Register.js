@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import config from '../../config';
 
 class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
       credentials: {
-        login: "",
+        email: "",
         password: ""
       }
     };
@@ -21,19 +22,37 @@ class Register extends Component {
   }
 
   register(){
-    // send credentials to server
-    alert(JSON.stringify(this.state.credentials))
+    alert(JSON.stringify(this.state.credentials));
+    this.props.navigation.navigate('main')
+    // fetch(config.baseURL + 'signup', {
+    //   method: 'POST',
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(this.state.credentials)
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //   if(data.confirmation==="success"){
+    //     this.props.navigation.navigate("main")
+    //   } else {
+    //     throw new Error({ message: 'sorry, something went wrong'})
+    //   }
+    // }).catch(err => {
+    //   alert(err.message)
+    // });
   }
+
   render() {
     return (
       <View
-        style={styles.view}
-        onPress={() => this.register()}>
+        style={styles.view}>
         <Text>Register</Text>
         <TextInput
-          value={this.state.login}
-          onChangeText={text => this.updateText(text, "login")}
-          placeholder="Username"
+          value={this.state.email}
+          onChangeText={text => this.updateText(text, "email")}
+          placeholder="Email"
           autoCorrect={false}
           style={styles.input}/>
         <TextInput

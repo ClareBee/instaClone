@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { MainFeed, LogIn, Camera, Profile, Register } from './components/screens';
+import { MainFeed, LogIn, CameraModel, Profile, Register } from './components/screens';
 import { createSwitchNavigator, createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 
 const Tabs = createBottomTabNavigator({
   feed: MainFeed,
-  camera: Camera,
+  camera: CameraModel,
   profile: Profile
 });
 
 const IntroStack = createStackNavigator({
-  register: Register,
-  login: LogIn
+  login: LogIn,
+  register: Register
 });
 
 const MainStack = createSwitchNavigator({
