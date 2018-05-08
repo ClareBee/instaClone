@@ -12,5 +12,6 @@ export default {
     row: {
       height: 50
     }
-  }
+  },
+  baseURL: "http://localhost:3000/api"
 }
